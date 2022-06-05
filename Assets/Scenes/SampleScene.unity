@@ -368,7 +368,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 812ac76ff15931248baab445a9e0c54c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rootConfiguration: {fileID: 11400000, guid: b5360d98dfd14134b9686f9c2f5322f4, type: 2}
+  _rootConfiguration: {fileID: 11400000, guid: 179ef1f5107338f44866f834acd9bcc7, type: 2}
   _asteroidsSpawnPoint: {fileID: 358887829}
   _ufosSpawnPoint: {fileID: 987026030}
   _mainCamera: {fileID: 963194227}

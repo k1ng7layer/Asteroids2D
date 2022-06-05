@@ -12,7 +12,7 @@ namespace Assets.Scripts.Runtime.UI
     {
         protected override void OnClick()
         {
-            Game.LoadScene(0);
+            Game.LoadScene(1);
         }
     }
 }

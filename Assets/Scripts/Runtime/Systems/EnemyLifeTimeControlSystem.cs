@@ -44,15 +44,14 @@ namespace Assets.Scripts.Runtime.Systems
 
                         _enemySpawnData.spawnedCount[enemy.enemyType] = --spawnedCount;
                     }
-                    Debug.Log("EnemyDestroyed by EnemyLifeTimeControlSystem");
+                    entity.Destroy();
+                }
+                   
                     
                   
                   
-                    Debug.Log($"spawned Count = {_enemySpawnData.spawnedCount["Asteroid"]}");
-                    entity.Destroy();
-                    //entity.Remove<TransformComponent>();
-                    //entity.Remove<EnemyComponent>();
-                }
+                   
+                   
             }
         }
     }

@@ -28,7 +28,7 @@ namespace MyObjectPool
 
                     var instance = GameObject.Instantiate(objectPrefab, parentObj.transform.position, parentObj.transform.rotation, parentObj.transform);
                     instance.name = name;
-                    //instance.id = objectPrefab.GetInstanceID();
+              
                     objects.Enqueue(instance);
 
                 }
@@ -52,7 +52,7 @@ namespace MyObjectPool
                 instance.name = name;
                 objects.Enqueue(instance);
                 _pooledObjects.Add(key, objects);
-               // Debug.Log("BULLET CREATED INIT");
+       
             }
         }
 
@@ -73,8 +73,7 @@ namespace MyObjectPool
                     
                     var parentObj = GetParentObjectForPool(key);
                     instance = Instantiate(objectPrefab, position, rotation, parentObj.transform);
-                    //instance.id = objectPrefab.GetInstanceID();
-                    //instance.OnCreated();
+
 
                 }
             }
@@ -82,8 +81,7 @@ namespace MyObjectPool
             {
                 CreatePoolingSlot(key, objectPrefab);
                 instance = GetObjectFromPool(key,objectPrefab, position, rotation);
-                //instance.OnCreated();
-               // Debug.Log("BULLET CREATED WHEN GETFROMPOOL");
+
             }
             return instance;  
         }
@@ -111,8 +109,7 @@ namespace MyObjectPool
             {
                 CreatePoolingSlot(key, objectPrefab);
                 instance = GetObjectFromPool(key, objectPrefab, position, rotation);
-                //instance.OnCreated();
-                // Debug.Log("BULLET CREATED WHEN GETFROMPOOL");
+
             }
             return instance;
         }
@@ -145,7 +142,7 @@ namespace MyObjectPool
         }
         public void ReturnObjectToPool(string poolName,GameObject pooledObject)
         {
-            Debug.Log("object returned");
+
             if (_pooledObjects.TryGetValue(poolName, out Queue<GameObject> queue))
             {
                 queue.Enqueue(pooledObject);

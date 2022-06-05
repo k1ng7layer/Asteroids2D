@@ -42,7 +42,6 @@ namespace Assets.Scripts.Runtime.Systems
                     
                 if (gun.currentCharge > 0f&&gun.ready==true)
                 {
-                    Debug.Log("LaserShot");
                     gun.onShot = true;
                     gun.currentCharge -= Time.deltaTime;
                     gun.currentCharge = Mathf.Clamp(gun.currentCharge, 0f, gun.maxDuration);
@@ -51,6 +50,13 @@ namespace Assets.Scripts.Runtime.Systems
                     _uIPresenter.PlayerLaserChargeInfo.SetValue(gun.currentCharge);
                     _laserUiIndicator.SetValue(gun.currentCharge);
                 }
+            }
+
+                   
+        }
+    }
+}
+                    
 
 
 
@@ -58,8 +64,3 @@ namespace Assets.Scripts.Runtime.Systems
               
               
                     
-            }
-                   
-        }
-    }
-}

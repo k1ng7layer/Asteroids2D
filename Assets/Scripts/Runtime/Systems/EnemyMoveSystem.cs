@@ -29,7 +29,7 @@ namespace Assets.Scripts.Runtime.Systems
 
                    
                     ref var transform = ref _filter.GetFirst(item);
-                    Debug.Log($"EnemyMoveSystem at POSITION = {transform.Position}");
+                   
                     transform.Position +=  transform.Forward * Time.deltaTime* transform.acceleration;
                     entity.attachedView.SetPosition(ref transform.Position);
                     entity.attachedView.SetRotation(transform.Rotation);

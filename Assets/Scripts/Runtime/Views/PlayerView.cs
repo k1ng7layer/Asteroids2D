@@ -49,7 +49,7 @@ namespace Assets.Scripts.Runtime.Views
 
             if (TriggerHash.Instance._enemyHash.ContainsKey(collision.gameObject.GetInstanceID()))
             {
-                Debug.Log("Player Hit");
+                
                 var distance = collision.gameObject.transform.position - this.transform.position;
                 if (Mathf.Abs(distance.magnitude) < 1.5f)
                     _entityObject.Add<PlayerHitComponent>();

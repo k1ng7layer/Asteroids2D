@@ -52,19 +52,7 @@ namespace Assets.Scripts.Runtime.Systems
                 if (split.spawnedCount < splitCount&& enemyComp.isSplited ==false)
                 {
                     SplitEnemy(ref split);
-                    //ref var spawner = ref _entityHandler.CreateEntity();
-                    //ref var spawnRequest = ref spawner.Add<SpawnComponent>();
-                    //spawnRequest.enemyPooledType = "Asteroid";
-                    //spawnRequest.viewPrefab = _enemySpawnData.prefabMap["Asteroid"];
-                    ////ref var transform = ref entity.Add<TransformComponent>();
-                    //spawnRequest.spawnPosition = split.splitPoint;
-                    ////Debug.Log($"EnemySplitSystem position = { spawnRequest.spawnPosition}");
-                    //Debug.Log($"EnemySplitted at POSITION = {spawnRequest.spawnPosition}");
-                    //Quaternion spawnRotation = Quaternion.AngleAxis(UnityEngine.Random.Range(_minSpawnAngleZ, _maxSpawnAngleZ), Vector3.forward);
-                    //spawnRequest.spawnRotation = spawnRotation;
-                    //spawnRequest.spawnScale = new Vector3(0.5f, 0.5f, 0.5f);
-                    //spawnRequest.isSplited = true;
-                    //split.spawnedCount++;
+                  
                 }
                 else
                 {
@@ -78,27 +66,19 @@ namespace Assets.Scripts.Runtime.Systems
         }
         private void SplitEnemy(ref SplitComponent split)
         {
-            //var splitCount = split.splitCount;
-            //if (!split.isOriginalDestroyed)
-            //{
-            //    _countDecreased = true;
-            //    split.isOriginalDestroyed = true;
-            //    var spawnedCount = _enemySpawnData.spawnedCount["Asteroid"];
-            //    _enemySpawnData.spawnedCount["Asteroid"] = --spawnedCount;
-            //}
             ref var spawner = ref _entityHandler.CreateEntity();
             ref var spawnRequest = ref spawner.Add<SpawnComponent>();
             spawnRequest.enemyPooledType = "Asteroid";
             spawnRequest.viewPrefab = _enemySpawnData.prefabMap["Asteroid"];
-            //ref var transform = ref entity.Add<TransformComponent>();
             spawnRequest.spawnPosition = split.splitPoint;
-            //Debug.Log($"EnemySplitSystem position = { spawnRequest.spawnPosition}");
-            Debug.Log($"EnemySplitted at POSITION = {spawnRequest.spawnPosition}");
-
             spawnRequest.randomRotation = true;
             spawnRequest.spawnScale = new Vector3(0.5f, 0.5f, 0.5f);
             spawnRequest.isSplited = true;
             split.spawnedCount++;
         }
+          
     }
+  
+  
+
 }

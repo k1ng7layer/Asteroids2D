@@ -34,13 +34,13 @@ namespace Assets.Scripts.Runtime.Systems
                 ref var enemySpawnerEntity = ref _filter.GetEntity(item);
                 ref var spawnRequest = ref _filter.Get(item);
                 var enemyType = spawnRequest.enemyPooledType;
-                //Debug.Log($"SpawnRequest position = {spawnRequest.spawnPosition}");
+               
                 EnemyView obj = ObjectPoolFacade.GetObjectFromPool(spawnRequest.viewPrefab,
                                                                    spawnRequest.spawnPosition,
                                                                    spawnRequest.spawnRotation,
                                                                    spawnRequest.spawnScale);
-                Debug.Log($"EnemySpawned at POSITION = {obj.transform.position}");
-                //var obj = GameObject.Instantiate(spawnRequest.viewPrefab, spawnRequest.spawnPosition, spawnRequest.spawnRotation);
+              
+                
 
                 ref var enemy = ref entityHandler.CreateEntity();
                 ref var enemyComp = ref enemy.Add<EnemyComponent>();

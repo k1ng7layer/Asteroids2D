@@ -1,35 +1,40 @@
-﻿using Assets.Runtime.Systems;
-using Assets.Scripts.Runtime.Data;
-using Assets.Scripts.Runtime.Systems;
-using Assets.Scripts.Runtime.UI;
-using Assets.Scripts.Runtime.Views;
+﻿using Assets.Scripts.Configuration;
 using MyECS2;
-using MyObjectPool;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Assets.Scripts.Runtime
 {
     public class SystemRunner
     {
+        private SystemHandler _systemHandler;
+        private SystemHandler _lateUpdateHandler;
+
+        public SystemRunner(RootConfiguration root,SystemConfiguration systemConfiguration)
+        {
+            _systemHandler = root.ECS.GetSystemHandler(systemConfiguration);
+            _lateUpdateHandler = root.ECS.GetLateUpdateSystems(systemConfiguration);
+        }
 
         public void Init()
         {
-            
+            _systemHandler.Initialize();
+            _lateUpdateHandler.Initialize();
         }
 
         public void Update()
         {
+            _systemHandler.Update();
+        }
 
+        public void LateUpdate()
+        {
+            _lateUpdateHandler.Update();
         }
 
         public void Destroy()
         {
-
-
+            _systemHandler.Destroy();
+            _lateUpdateHandler.Destroy();
         }
     }
 }
+

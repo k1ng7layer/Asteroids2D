@@ -41,7 +41,7 @@ namespace MyECS2
             _initialized = true;
             foreach (var system in _gameSystems)
             {
-                Debug.Log($"system start = {system}");
+              
                 var systemType = system.GetType();
                 var properties = systemType.GetFields(BindingFlags.Instance | BindingFlags.NonPublic);
                 foreach (var item in properties)

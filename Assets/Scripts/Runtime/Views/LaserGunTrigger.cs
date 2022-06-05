@@ -56,11 +56,11 @@ namespace Assets.Scripts.Runtime.Views
         {
             if (TriggerHash.Instance._enemyHash.ContainsKey(collision.gameObject.GetInstanceID()))
             {
-                Debug.Log("enemy triggered");
                 OnTargetReached?.Invoke(this);
             }
 
         }
+               
         
     }
 }

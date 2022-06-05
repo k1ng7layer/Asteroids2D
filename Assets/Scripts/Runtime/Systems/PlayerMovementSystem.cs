@@ -46,7 +46,7 @@ namespace Assets.Scripts.Runtime.Systems
                 _prevPosition = playerTransform.Position;
                 _uIPresenter.PlayerVelocityInfo.SetValue(Velocity);
                 _uIPresenter.PlayerCoordsInfo.SetValue(playerTransform.Position);
-                Debug.Log("PlayerMovementSystem");
+              
             }
             
         }

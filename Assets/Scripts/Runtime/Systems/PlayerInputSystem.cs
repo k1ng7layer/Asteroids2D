@@ -13,7 +13,7 @@ namespace Assets.Runtime.Systems
         private PlayerInputData _playerInputData;
         private bool _move;
         private bool _rotation;
-        private EntityHandler _entityHandler;
+  
         private Vector2 _rotationDir;
         private bool _onGunShot;
         private bool _onLaserShot;
@@ -112,7 +112,7 @@ namespace Assets.Runtime.Systems
                     ref var shoot = ref gun.weaponEntity.Add<ShootComponent>();
                     if(gun.weaponEntity.HasComponent<LaserLateChargeComponent>())
                         gun.weaponEntity.Remove<LaserLateChargeComponent>();
-                    //Debug.Log("LaserShot");
+                    
                 }
                 else
                 {

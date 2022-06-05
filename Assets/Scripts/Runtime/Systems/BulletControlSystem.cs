@@ -31,10 +31,10 @@ namespace Assets.Scripts.Runtime.Systems
                 ref var bulletEntity = ref _filter.GetEntity(item);
                 if (bullet.lifeTime <= 0f)
                 {
-                    Debug.Log("Remove bullet");
+                    
                     bulletEntity.Remove<BulletComponent>();
                     bulletEntity.Remove<TransformComponent>();
-                    //GameObjectPoolFacade.ReturnObjectToPool("Bullet", bullet.attachedBullet);
+                 
                     TriggerHash.Instance._bulletHash.Remove(bullet.attachedView.gameObject.GetInstanceID());
                     ObjectPoolFacade.ReturnObjectToPool(bullet.attachedView);
                     

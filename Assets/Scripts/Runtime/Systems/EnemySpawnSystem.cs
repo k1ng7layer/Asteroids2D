@@ -45,7 +45,7 @@ namespace Assets.Scripts.Runtime.Systems
                 Vector3 targetPoint = GetTargetPoint(spawnPoint);
                 Vector3 realitivePos = targetPoint - spawnPos;
                 Quaternion quaternion = Quaternion.FromToRotation(Vector3.up, realitivePos);
-                //var obj = GameObjectPoolFacade.GetObjectFromPool(enemyType, spawnRequest.enemyPrefab, spawnPos, quaternion, spawnRequest.spawnScale);
+              
                 EnemyView obj = ObjectPoolFacade.GetObjectFromPool(spawnRequest.viewPrefab, spawnPos, quaternion, spawnRequest.spawnScale);
                 
                 ref var enemy = ref entityHandler.CreateEntity();
@@ -66,7 +66,7 @@ namespace Assets.Scripts.Runtime.Systems
                 enemyTransform.Rotation = quaternion;
                 obj.SetPosition(ref enemyTransform.Position);
                 obj.SetRotation(enemyTransform.Rotation);
-                Debug.Log($"rotation to target = {enemyTransform.Rotation.eulerAngles}");
+              
                 obj._entityObject = enemy;
                 enemyComp.alive = true;
                 enemyComp.attachedView = obj;

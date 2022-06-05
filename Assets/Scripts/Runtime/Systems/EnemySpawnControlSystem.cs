@@ -39,7 +39,7 @@ namespace Assets.Scripts.Runtime.Systems
                 
                 if (_enemySpawnData.spawnedCount.TryGetValue(enemyType, out int count))
                 {
-                    Debug.Log($"EnemySpawnControlSystem, spawned = {count}");
+                   
                     if (count < spawner.countToSpawn)
                     {
                        

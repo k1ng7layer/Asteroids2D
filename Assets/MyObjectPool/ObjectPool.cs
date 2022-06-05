@@ -34,29 +34,7 @@ namespace MyObjectPool
                 _pooledObjects.Add(objectPrefab.GetInstanceID(), objects);
             }
         }
-        //public void CreatePoolingSlot<T>(GameObject objectPrefab, int count) where T : PooledObject
-        //{
-        //    var obj = Instantiate(objectPrefab);
-        //    var tInstance = obj.transform.GetOrCreateComponent<T>();
-        //    var parentObj1 = GetParentObjectForPool(objectPrefab.GetInstanceID());
-        //    tInstance.transform.SetParent(parentObj1.transform);
-
-        //    if (!_pooledObjects.TryGetValue(tInstance.GetInstanceID(), out Queue<PooledObject> pooledObjects))
-        //    {
-        //        Queue<PooledObject> objects = new Queue<PooledObject>();
-        //        for (int i = 0; i < count; i++)
-        //        {
-        //            var name = tInstance.name + i;
-        //            var parentObj = GetParentObjectForPool(tInstance);
-        //            var instance = Instantiate(tInstance, parentObj.transform.position, parentObj.transform.rotation, parentObj.transform);
-        //            instance.name = name;
-        //            instance.id = tInstance.GetInstanceID();
-        //            objects.Enqueue(instance);
-        //            Debug.Log("BULLET CREATED INIT");
-        //        }
-        //        _pooledObjects.Add(tInstance.GetInstanceID(), objects);
-        //    }
-        //}
+       
 
         public void CreatePoolingSlot<T>(T objectPrefab) where T : PooledObject
         {
@@ -73,7 +51,7 @@ namespace MyObjectPool
                 instance.name = name;
                 objects.Enqueue(instance);
                 _pooledObjects.Add(objectPrefab.id, objects);
-                Debug.Log("BULLET CREATED INIT");
+                
             }
         }
 

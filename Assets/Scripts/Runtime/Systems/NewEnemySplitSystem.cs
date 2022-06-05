@@ -36,7 +36,7 @@ namespace Assets.Scripts.Runtime.Systems
                 ref var enemyComp = ref _filter.GetFirst(item);
                 ref var split = ref _filter.GetSecond(item);
                 ref var entity = ref _filter.GetEntity(item);
-                //entity.Remove<TransformComponent>();
+
                 var splitCount = split.splitCount;
                 if (enemyComp.isSplited == false)
                 {
@@ -47,23 +47,10 @@ namespace Assets.Scripts.Runtime.Systems
                     SplitEnemy(ref split);
                 }
                 PlayerSceneData.Instance.PlayerScore++;
-                //entity.Remove<SplitComponent>();
+
                 ObjectPoolFacade.ReturnObjectToPool(enemyComp.attachedView);
                 entity.Destroy();
 
-
-                //if (enemyComp.isSplited == false)
-                //{
-                //    SplitEnemy(ref split);
-                //    entity.Remove<SplitComponent>();
-                //    entity.Destroy();
-                //}
-                //else
-                //{
-                //    entity.Remove<SplitComponent>();
-                //    entity.Destroy();
-
-                //}
             }
 
 
@@ -77,13 +64,12 @@ namespace Assets.Scripts.Runtime.Systems
             spawnRequest.viewPrefab = _enemySpawnData.prefabMap["Asteroid"];
 
             spawnRequest.spawnPosition = split.splitPoint;
-            Debug.Log($"EnemySplitted at POSITION = {spawnRequest.spawnPosition}");
-            //Quaternion spawnRotation = Quaternion.AngleAxis(UnityEngine.Random.Range(_minSpawnAngleZ, _maxSpawnAngleZ), Vector3.forward);
+           
             spawnRequest.randomRotation = true;
             spawnRequest.spawnScale = new Vector3(0.5f, 0.5f, 0.5f);
             spawnRequest.isSplited = true;
             spawnRequest.countToSpawn = split.splitCount;
-            //split.spawnedCount++;
+
         }
     }
 }
