@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _asteroidPrefab: {fileID: 2476531311199466633, guid: c6774357aba0aa947b7cde68c82f9ff1, type: 3}
   _ufoPrefab: {fileID: 5975989966308242634, guid: 9aa9d3513b4629d41b87b074d180b85c, type: 3}
-  _asteroidCount: 2
+  _asteroidCount: 0
   _ufoCount: 0

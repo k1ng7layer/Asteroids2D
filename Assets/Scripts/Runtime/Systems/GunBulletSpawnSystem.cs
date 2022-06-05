@@ -38,8 +38,8 @@ namespace Assets.Scripts.Runtime.Systems
                 bulletComp.attachedView = bulletView;
                 
                 bulletComp.attachedView = bulletView;
-                bulletComp.speed = 15f;
-                bulletComp.lifeTime = 4f;
+                bulletComp.speed = gun.bulletSpeed;
+                bulletComp.lifeTime = gun.bulletLifetime;
                 ref var bulletTransform = ref bulletEntity.Add<TransformComponent>();
                 bulletTransform.Position = gun.handler.Position;
                 bulletTransform.Rotation = gun.handler.Rotation;

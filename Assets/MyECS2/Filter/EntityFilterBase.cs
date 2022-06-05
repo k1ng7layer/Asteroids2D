@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace MyECS2
 {
-    public abstract class EntityFilterBase : IFilter
+    public abstract class EntityFilterBase : IFilter,IEnumerable<int>
     {
         public EntityFilterBase(EntityHandler entityHandler)
         {
@@ -17,7 +17,7 @@ namespace MyECS2
         }
         internal ComponentPoolProvider PoolProvider { get; private set; }
         protected EntityObject[] RegisteredEntities;
-        public int RegisteredEntityCount { get;  set; }
+        internal int RegisteredEntityCount { get;  set; }
         public List<int> AttachedComponentsHash { get ; set ; }
 
         int IFilter.RegisteredEntitiesCount => RegisteredEntityCount;
@@ -72,13 +72,15 @@ namespace MyECS2
             return true;
         }
 
-        public IEnumerator GetEnumerator()
+        public IEnumerator<int> GetEnumerator()
         {
             return new FilterEnumerator(this);
         }
 
-      
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
 
-      
     }
 }

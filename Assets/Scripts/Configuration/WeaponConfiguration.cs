@@ -12,6 +12,10 @@ namespace Assets.Scripts.Configuration
     public class WeaponConfiguration : ScriptableObject
     {
         [SerializeField] BulletView _bulletPrefab;
+        [SerializeField] private float _bulletSpeed;
+        [SerializeField] private float _bulletLifetime;
         public BulletView BulletPrefab => _bulletPrefab;
+        public float BulletSpeed => _bulletSpeed;
+        public float BulletLifetime => _bulletLifetime;
     }
 }

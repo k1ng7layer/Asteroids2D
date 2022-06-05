@@ -31,10 +31,8 @@ namespace Assets.Scripts.Runtime.Systems
                 ref var bulletEntity = ref _filter.GetEntity(item);
                 ref var bullet = ref _filter.GetFirst(item);
                 if (bullet.lifeTime <= 0f)
-                {
-                   
-                    bulletEntity.Remove<BulletComponent>();
-                    //GameObjectPoolFacade.ReturnObjectToPool("Bullet", bullet.attachedBullet);
+                {                  
+                    bulletEntity.Remove<BulletComponent>();                  
                     ObjectPoolFacade.ReturnObjectToPool(bullet.attachedView);
                     TriggerHash.Instance._bulletHash.Remove(bullet.attachedBullet.GetInstanceID());
                     bulletEntity.Remove<TransformComponent>();

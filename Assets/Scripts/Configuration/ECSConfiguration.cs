@@ -19,12 +19,12 @@ namespace Assets.Scripts.Configuration
         public SystemHandler GetSystemHandler(SystemConfiguration systemConfiguration)
         {
             Camera _mainCamera = FindObjectOfType<Camera>();
-            Time.timeScale = 1f;
-            //uI = new UIPresenter(configuration.UI);
+          
+         
             ObjectPoolFacade.CreatePoolingSlot<EnemyView>(systemConfiguration.Root.Enemy.AsteroidPrefab, systemConfiguration.Root.Enemy.AsteroidCount * 2);
             ObjectPoolFacade.CreatePoolingSlot<EnemyView>(systemConfiguration.Root.Enemy.UfoPrefab, systemConfiguration.Root.Enemy.UfoCount);
             var entityHandler = systemConfiguration.EntityHandler;
-            //EntityHandler entityHandler = new EntityHandler();
+          
             _systemHandler = new SystemHandler(systemConfiguration.EntityHandler);
             PlayerInputSystem inputSystem = new PlayerInputSystem();
             ViewFactory playerViewFactory = new PlayerViewFactory();
@@ -41,7 +41,7 @@ namespace Assets.Scripts.Configuration
             LaserShotSystem laserShot = new LaserShotSystem();
             LaserChargeSystem laserCharge = new LaserChargeSystem();
           
-            EnemySpawnSystem enemySpawn = new EnemySpawnSystem();
+            
             EnemySpawnData spawnData = new EnemySpawnData();
             EnemySpawnControlSystem enemySpawnControl = new EnemySpawnControlSystem();
             EnemyMoveSystem enemyMove = new EnemyMoveSystem();
@@ -50,7 +50,7 @@ namespace Assets.Scripts.Configuration
             ScreenTeleportSystem screenTeleportSystem = new ScreenTeleportSystem();
             DamageRegisterSystem damageRegister = new DamageRegisterSystem();
           
-            EnemySplitSystem splitSistem = new EnemySplitSystem();
+            
             NewSpawnSystem newSpawnSystem = new NewSpawnSystem();
             NewEnemySplitSystem newEnemySplitSystem = new NewEnemySplitSystem();
             PlayerHitSystem playerHitSystem = new PlayerHitSystem();
@@ -69,10 +69,12 @@ namespace Assets.Scripts.Configuration
             WeaponViewFactory viewFactory = new WeaponViewFactory(playerViewFactory.SpawnedPlayerObject);
 
 
-            //GameObjectPoolFacade.CreatePoolingSlot("Bullet", _rootConfiguration.Weapon.BulletPrefab, 3);
+            
             ObjectPoolFacade.CreatePoolingSlot(systemConfiguration.Root.Weapon.BulletPrefab, 30);
             BulletSpawnData bulletSpawnData = new BulletSpawnData(systemConfiguration.Root.Weapon.BulletPrefab);
             ref var fireGun = ref fireGunEntity.Add<FireGunComponent>();
+            fireGun.bulletSpeed = systemConfiguration.Root.Weapon.BulletSpeed;
+            fireGun.bulletLifetime = systemConfiguration.Root.Weapon.BulletLifetime;
             ref var laserGun = ref laserGunEntity.Add<LaserGunComponent>();
             ref var laserChargeComp = ref laserGunEntity.Add<LaserChargeComponent>();
             laserGun.handler = playerView;
@@ -108,7 +110,7 @@ namespace Assets.Scripts.Configuration
             asteroidSpawn.normalScale = new Vector3(1f, 1f, 1f);
 
             fireGun.handler = playerView;
-            //fireGun._bulletPrefab = _rootConfiguration.Weapon.BulletPrefab;
+          
 
             playerfireGunWeapon.weaponEntity = fireGunEntity;
             playerAccelRot.maxSpeed = 10f;
@@ -128,18 +130,16 @@ namespace Assets.Scripts.Configuration
                           .AddSystem(bulletSpawnSystem)
                           .AddSystem(bulletControl)
                           .AddSystem(laserShot)
-                          .AddSystem(laserCharge)
-                          //.AddSystem(enemySpawn)
+                          .AddSystem(laserCharge)                      
                           .AddSystem(enemySpawnControl)
                           .AddSystem(enemyMove)
                           .AddSystem(targetFollow)
                           .AddSystem(enemyLifeTimeControl)
                           .AddSystem(screenTeleportSystem)
-                          .AddSystem(damageRegister)
-                          //.AddSystem(spawnSystem)
+                          .AddSystem(damageRegister)    
+                          .AddSystem(bulletLifeTime)
                           .AddSystem(newSpawnSystem)
-                          .AddSystem(playerHitSystem)
-                          //.AddSystem(splitSistem)
+                          .AddSystem(playerHitSystem)                       
                           .AddSystem(newEnemySplitSystem)
                           .Inject<PlayerInputData>(inputData)
                           .Inject<PlayerEntityData>(playerEntity)

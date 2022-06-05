@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: WeaponConfig
   m_EditorClassIdentifier: 
   _bulletPrefab: {fileID: 684863728728490364, guid: 7faa8f327a7f5ca42a907f38c35cb912, type: 3}
+  _bulletSpeed: 15
+  _bulletLifetime: 15
