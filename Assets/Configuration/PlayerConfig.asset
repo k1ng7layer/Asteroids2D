@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: PlayerConfig
   m_EditorClassIdentifier: 
   _playerPrefab: {fileID: 2193418635228689461, guid: cca5460347655d1429c79d867b0888f5, type: 3}
+  _maxSpeed: 3

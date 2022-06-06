@@ -1,9 +1,6 @@
-﻿using Assets.Interfaces;
-using Assets.Scripts.Runtime.Views;
-using MyECS2;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace Assets.Scripts.Runtime.Components
+namespace AsteroidsECS
 {
     public struct FireGunComponent
     {

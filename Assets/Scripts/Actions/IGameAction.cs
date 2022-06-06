@@ -1,4 +1,4 @@
-﻿namespace Assets.Scripts.Actions
+﻿namespace MyActionContainer
 {
     public interface IGameAction
     {

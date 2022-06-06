@@ -1,6 +1,6 @@
 ﻿using MyECS2;
 
-namespace Assets.Scripts.Runtime.Components
+namespace AsteroidsECS
 {
     public struct PlayerFireGunWeaponComponent
     {

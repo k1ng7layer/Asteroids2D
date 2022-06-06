@@ -1,11 +1,8 @@
-﻿using Assets.Scripts.Runtime.Components;
-using Assets.Scripts.Runtime.Data;
-using Assets.Scripts.Runtime.Views;
-using MyECS2;
+﻿using MyECS2;
 using MyObjectPool;
 using UnityEngine;
 
-namespace Assets.Scripts.Runtime.Systems
+namespace AsteroidsECS
 {
     public class NewSpawnSystem : IGameSystem
     {

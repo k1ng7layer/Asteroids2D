@@ -1,7 +1,7 @@
 ﻿using MyECS2;
 using UnityEngine;
 
-namespace Assets.Scripts.Configuration
+namespace AsteroidsECS
 {
 
     public abstract class ECSConfiguration:ScriptableObject

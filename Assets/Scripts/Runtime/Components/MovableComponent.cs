@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Assets.Scripts.Runtime.Components
+namespace AsteroidsECS
 {
     public struct MovableComponent
     {

@@ -1,13 +1,6 @@
-﻿using Assets.Scripts.Runtime.Components;
-using MyECS2;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UnityEngine;
+﻿using MyECS2;
 
-namespace Assets.Scripts.Runtime.Systems
+namespace AsteroidsECS
 {
     public class LaserChargeLateUpdate : IGameSystem
     {

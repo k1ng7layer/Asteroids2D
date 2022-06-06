@@ -1,6 +1,6 @@
 ﻿using MyExtensions;
 
-namespace Assets.Scripts.Runtime.Data
+namespace AsteroidsECS
 {
     public class PlayerSceneData:MonoSingleton<PlayerSceneData>
     {

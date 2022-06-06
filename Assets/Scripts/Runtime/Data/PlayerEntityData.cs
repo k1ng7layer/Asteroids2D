@@ -1,14 +1,7 @@
-﻿using Assets.Interfaces;
-using Assets.Scripts.Runtime.Components;
-using MyECS2;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MyECS2;
 using UnityEngine;
 
-namespace Assets.Scripts.Runtime.Data
+namespace AsteroidsECS
 {
     public class PlayerEntityData
     {

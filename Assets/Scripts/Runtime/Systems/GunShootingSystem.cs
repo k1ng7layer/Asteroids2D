@@ -1,8 +1,6 @@
-﻿using Assets.Scripts.Runtime.Components;
-using Assets.Scripts.Runtime.Data;
-using MyECS2;
+﻿using MyECS2;
 
-namespace Assets.Scripts.Runtime.Systems
+namespace AsteroidsECS
 {
     public class GunShootingSystem : IGameSystem
     {

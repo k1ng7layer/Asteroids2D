@@ -1,7 +1,6 @@
-﻿using Assets.Scripts.Configuration;
-using MyECS2;
+﻿using MyECS2;
 
-namespace Assets.Scripts.Runtime
+namespace AsteroidsECS
 {
     public class SystemRunner
     {

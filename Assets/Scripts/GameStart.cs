@@ -1,8 +1,6 @@
-using Assets.Scripts.Actions;
-using Assets.Scripts.Runtime.UI;
+using AsteroidsECS;
+using MyActionContainer;
 using MyUISystem;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GameStart : MonoBehaviour

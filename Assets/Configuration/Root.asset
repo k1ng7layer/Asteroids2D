@@ -16,4 +16,4 @@ MonoBehaviour:
   _enemyConfiguration: {fileID: 11400000, guid: afe9e5896ed92dd4b9ae9a8983bc72f5, type: 2}
   _weaponConfiguration: {fileID: 11400000, guid: 879b0de2e0b58e1448630c8df05bb5af, type: 2}
   _uIConfiguration: {fileID: 11400000, guid: 8f0a4411fe2c9b34f8e19d37f684f3db, type: 2}
-  _eCSConfiguration: {fileID: 11400000, guid: b669cdd57ec9e4a4889ea65ded71900f, type: 2}
+  _eCSConfiguration: {fileID: 11400000, guid: 9a5eb2b442de69246b5a9c029d98445c, type: 2}

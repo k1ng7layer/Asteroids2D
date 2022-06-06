@@ -1,11 +1,7 @@
-﻿using Assets.Scripts.Runtime.Components;
-using Assets.Scripts.Runtime.Data;
+﻿using MyECS2;
 using UnityEngine;
-using MyECS2;
-using Assets.Interfaces;
-using Assets.Scripts.Runtime.UI;
 
-namespace Assets.Scripts.Runtime.Systems
+namespace AsteroidsECS
 {
     public class PlayerMovementSystem : IGameSystem
     {

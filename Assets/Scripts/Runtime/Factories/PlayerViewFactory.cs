@@ -1,9 +1,7 @@
-﻿using Assets.Interfaces;
-using Assets.Scripts.Runtime.Views;
-using MyExtensions;
+﻿using MyExtensions;
 using UnityEngine;
 
-namespace Assets.Scripts.Runtime.Factories
+namespace AsteroidsECS
 {
     public class PlayerViewFactory : ViewFactory
     {

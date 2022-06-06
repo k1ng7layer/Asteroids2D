@@ -1,8 +1,7 @@
 ﻿using MyECS2;
-using Assets.Scripts.Runtime.Components;
 using UnityEngine;
 
-namespace Assets.Scripts.Runtime.Systems
+namespace AsteroidsECS
 {
     public class EnemyMoveSystem : IGameSystem
     {

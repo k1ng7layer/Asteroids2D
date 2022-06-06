@@ -1,7 +1,5 @@
-using Assets.Scripts.Actions;
-using Assets.Scripts.Configuration;
-using Assets.Scripts.Runtime;
-using Assets.Scripts.Runtime.UI;
+using AsteroidsECS;
+using MyActionContainer;
 using MyECS2;
 using UnityEngine;
 

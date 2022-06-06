@@ -1,9 +1,7 @@
-﻿using Assets.Scripts.Runtime.Components;
-using Assets.Scripts.Runtime.Data;
-using MyECS2;
+﻿using MyECS2;
 using MyObjectPool;
 
-namespace Assets.Scripts.Runtime.Systems
+namespace AsteroidsECS
 {
     public class BulletLifeTimeSystem : IGameSystem
     {

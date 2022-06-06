@@ -1,7 +1,7 @@
 ﻿using MyUISystem;
 using TMPro;
 
-namespace Assets.Scripts.Runtime.UI
+namespace AsteroidsECS
 {
     public class GameIndicator<T>: IIndicator<T>
     {

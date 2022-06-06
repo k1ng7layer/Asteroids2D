@@ -1,14 +1,7 @@
-﻿using Assets.Interfaces;
-using Assets.Scripts.Runtime.Views;
-using MyExtensions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MyExtensions;
 using UnityEngine;
 
-namespace Assets.Scripts.Runtime.Factories
+namespace AsteroidsECS
 {
     public enum WeaponType
     {

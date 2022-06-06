@@ -1,12 +1,6 @@
-﻿using Assets.Scripts.Runtime.Processing;
-using MyUISystem;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MyUISystem;
 
-namespace Assets.Scripts.Runtime.UI
+namespace AsteroidsECS
 {
     public class RestartGameButton : UIButton
     {

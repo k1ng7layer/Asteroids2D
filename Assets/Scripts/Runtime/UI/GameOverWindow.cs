@@ -1,9 +1,8 @@
-﻿using Assets.Scripts.Runtime.Data;
-using MyUISystem;
+﻿using MyUISystem;
 using TMPro;
 using UnityEngine;
 
-namespace Assets.Scripts.Runtime.UI
+namespace AsteroidsECS
 {
     public class GameOverWindow : UIWindow
     {

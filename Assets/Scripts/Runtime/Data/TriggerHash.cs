@@ -1,13 +1,7 @@
-﻿using Assets.Scripts.Runtime.Views;
-using MyExtensions;
-using System;
+﻿using MyExtensions;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UnityEngine;
 
-namespace Assets.Scripts.Runtime.Data
+namespace AsteroidsECS
 {
     public class TriggerHash : MonoSingleton<TriggerHash>
     {

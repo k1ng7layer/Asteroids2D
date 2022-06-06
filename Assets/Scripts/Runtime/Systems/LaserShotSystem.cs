@@ -1,15 +1,8 @@
-﻿using Assets.Scripts.Runtime.Components;
-using Assets.Scripts.Runtime.UI;
-using MyECS2;
+﻿using MyECS2;
 using MyUISystem;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
 
-namespace Assets.Scripts.Runtime.Systems
+namespace AsteroidsECS
 {
     public class LaserShotSystem : IGameSystem
     {

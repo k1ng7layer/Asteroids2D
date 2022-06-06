@@ -1,12 +1,7 @@
-﻿using Assets.Scripts.Runtime.Views;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace Assets.Scripts.Runtime.Data
+namespace AsteroidsECS
 {
     public class EnemySpawnData
     {

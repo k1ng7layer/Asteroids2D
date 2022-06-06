@@ -1,7 +1,4 @@
-﻿using Assets.Scripts.Actions.CustomActions;
-
-
-namespace Assets.Scripts.Actions
+﻿namespace MyActionContainer
 {
     public static class ActionConfig
     {

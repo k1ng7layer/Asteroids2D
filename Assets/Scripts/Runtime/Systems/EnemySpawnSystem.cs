@@ -1,13 +1,9 @@
-﻿using Assets.Interfaces;
-using Assets.Scripts.Runtime.Components;
-using Assets.Scripts.Runtime.Data;
-using Assets.Scripts.Runtime.Views;
-using MyECS2;
+﻿using MyECS2;
 using MyObjectPool;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Assets.Scripts.Runtime.Systems
+namespace AsteroidsECS
 {
     public class EnemySpawnSystem : IGameSystem
     {

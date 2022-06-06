@@ -1,14 +1,7 @@
-﻿using Assets.Scripts.Runtime.Components;
-using Assets.Scripts.Runtime.Data;
-using MyObjectPool;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MyObjectPool;
 using UnityEngine;
 
-namespace Assets.Scripts.Runtime.Views
+namespace AsteroidsECS
 {
     public class UfoView:EnemyView
     {
@@ -18,7 +11,7 @@ namespace Assets.Scripts.Runtime.Views
             {
                 bullet.GetEntity().Destroy();
                 bullet.OnViewDestroy();
-                ObjectPoolFacade.ReturnObjectToPool(bullet);
+                //ObjectPoolFacade.ReturnObjectToPool(bullet);
                 ref var hit = ref _entityObject.Add<HitComponent>();
             }
         }

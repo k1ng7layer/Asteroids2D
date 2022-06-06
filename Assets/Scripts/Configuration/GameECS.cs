@@ -1,16 +1,8 @@
-﻿using Assets.Interfaces;
-using Assets.Runtime.Systems;
-using Assets.Scripts.Runtime.Components;
-using Assets.Scripts.Runtime.Data;
-using Assets.Scripts.Runtime.Factories;
-using Assets.Scripts.Runtime.Systems;
-using Assets.Scripts.Runtime.UI;
-using Assets.Scripts.Runtime.Views;
-using MyECS2;
+﻿using MyECS2;
 using MyObjectPool;
 using UnityEngine;
 
-namespace Assets.Scripts.Configuration
+namespace AsteroidsECS
 {
     [CreateAssetMenu(fileName = "new config", menuName = "Configuration/ECS CFG")]
     public class GameECS: ECSConfiguration
