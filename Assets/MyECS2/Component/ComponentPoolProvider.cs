@@ -1,7 +1,5 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
 namespace MyECS2
 {
@@ -36,19 +34,6 @@ namespace MyECS2
             }
         }
 
-        //internal ref T AddComponentToPool<T>(int hash, out int pooledIndex) where T:struct
-        //{
-        //    T instance = new T();
-        //    if (!_pools.TryGetValue(hash, out ComponentPool result))
-        //    {
-        //        CreatePool<T>(hash);
-        //    }
-        //    var pool = GetPool<T>(hash);
-        //    pool.AddComponentToPool(ref instance, out int index);
-        //    ref var pooledComponent1 = ref pool.GetComponentFromPool<T>(index);
-        //    pooledIndex = index;
-        //    return ref pooledComponent1;
-        //}
         internal ref T AddComponentToPool<T>(int entityId,int hash, out int pooledIndex) where T : struct
         {
             T instance = new T();
@@ -63,26 +48,6 @@ namespace MyECS2
             return ref pooledComponent1;
         }
 
-
-        //internal int GetEntityPooledIndex(ref EntityObject entity, int hash)
-        //{
-        //    int index = 0;
-        //    bool founded = false;
-        //    for (int i = 0; i < entity.componentsHashCount; i++)    
-        //    {
-        //        if(entity.registeredComponentsHash[i]== hash)
-        //        {
-        //            index = i;
-        //            founded = true;
-        //            break;
-        //        }
-        //    }
-        //    if (founded)
-        //    {
-        //        return entity.registeredComonentsIndexInPool[index];
-        //    }
-        //    throw new ArgumentNullException();
-        //}
         internal int GetEntityPooledIndex(ref EntityObject entity, int hash)
         {
             if (_pools.TryGetValue(hash, out ComponentPool pool))
@@ -91,6 +56,7 @@ namespace MyECS2
             }
             else throw new InvalidOperationException($"there is no pool of that type (type hash = {hash})");
         }
+
         internal void RemoveComponentFromPoolByEntityId(int hash,int entityGlobalId)
         {
             _pools[hash].RemoveEntityFromPool(entityGlobalId);

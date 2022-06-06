@@ -1,9 +1,7 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using UnityEngine;
 
 namespace MyECS2
 {
@@ -101,10 +99,6 @@ namespace MyECS2
         /// Добавить систему в обработчик систем
         /// </summary>
         /// <param name="gameSystem"></param>
-        //public void AddSystem(IGameSystem gameSystem)
-        //{
-        //    _gameSystems.Add(gameSystem);
-        //}
         public SystemHandler AddSystem(IGameSystem gameSystem)
         {
             _gameSystems.Add(gameSystem);

@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MyECS2
 {
@@ -62,11 +58,11 @@ namespace MyECS2
 
         public ref T Get( int entityIndex)
         {
-            //возможно нужно будет заменить на взятие компонента по ключу в мапе, находящейся в пуле
             var index = entitiyIndexInPool[entityIndex];
             return ref _componentPool.GetComponentFromPool<T>(index);
         }
     }
+            
     public class EntityFilter<T1,T2> : EntityFilterBase where T1 : struct where T2:struct
     {
         public EntityFilter(EntityHandler entityHandler) : base(entityHandler)
@@ -127,23 +123,19 @@ namespace MyECS2
                 registeredEntityMap[swappedEntity] = entityIndexInFilter;
                 entitiyIndexInPool1[entityIndexInFilter] = entitiyIndexInPool1[RegisteredEntityCount];
                 entitiyIndexInPool2[entityIndexInFilter] = entitiyIndexInPool2[RegisteredEntityCount];
-            }
-            //OnEntityRemovedFromFilter?.Invoke(AttachedComponentsHash[0], entitiyIndexInPool[entityIndexInFilter]);
+            }           
         }
 
         public ref T1 GetFirst(int entityIndex)
-        {
-            //возможно нужно будет заменить на взятие компонента по ключу в мапе, находящейся в пуле
+        {           
             var index = entitiyIndexInPool1[entityIndex];
-
             return ref _componentPool1.GetComponentFromPool<T1>(index);
         }
+
         public ref T2 GetSecond( int entityIndex)
-        {
-            //возможно нужно будет заменить на взятие компонента по ключу в мапе, находящейся в пуле
+        {       
             var index = entitiyIndexInPool2[entityIndex];
             return ref _componentPool2.GetComponentFromPool<T2>(index);
-
         }
            
     }

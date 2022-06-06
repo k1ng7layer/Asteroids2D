@@ -22,11 +22,12 @@ public class GameRunner : MonoBehaviour
         SystemConfiguration systemConfiguration = new SystemConfiguration(_rootConfiguration, uI, _asteroidsSpawnPoint, _ufosSpawnPoint, entityHandler);
         _systemRunner = new SystemRunner(_rootConfiguration, systemConfiguration);
 
+    }
         
 
-    }
     void Start()
     {
+        Time.timeScale = 1f;
         ActionConfig.ConfigureActions();
         uI.Initialize();
         _systemRunner.Init();

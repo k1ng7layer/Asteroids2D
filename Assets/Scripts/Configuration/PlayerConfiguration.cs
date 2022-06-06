@@ -11,5 +11,7 @@ namespace Assets.Scripts.Configuration
     public class PlayerConfiguration : ScriptableObject
     {
         [SerializeField] GameObject _playerPrefab;
+        [SerializeField] private float _maxSpeed;
+        public float MaxSpeed => _maxSpeed;
     }
 }

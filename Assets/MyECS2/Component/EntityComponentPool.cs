@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Assets.Scripts.Extensions;
 
 namespace MyECS2
 {
@@ -13,6 +8,7 @@ namespace MyECS2
         {
             Components = new T[10];
         }
+
         internal T[] Components;
         internal override int HashedComponentsCount { get ; set; }
 
@@ -23,14 +19,7 @@ namespace MyECS2
 
             Components[HashedComponentsCount++] = instance;
         }
-        //internal void AddComponentToPool(ref T instance, out int pooledIndex)
-        //{
-        //    if (Components.Length == HashedComponentsCount)
-        //        Array.Resize(ref Components, Components.Length + 1);
 
-        //    pooledIndex = HashedComponentsCount;
-        //    Components[HashedComponentsCount++] = instance;
-        //}
         internal ref T AddComponentToPool(int entityId, ref T instance, out int pooledIndex)
         {
             if (!EntityPoolMap.ContainsKey(entityId))
@@ -50,7 +39,6 @@ namespace MyECS2
 
         }
            
-
         internal void RemoveComponentFromPool<T>(ref T component, int pooledIndex)
         {
             if (HashedComponentsCount != 0)

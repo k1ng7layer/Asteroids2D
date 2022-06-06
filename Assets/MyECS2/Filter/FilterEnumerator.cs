@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MyECS2
 {
@@ -20,9 +16,6 @@ namespace MyECS2
         {
             get
             {
-                //if (_position == -1 || _position >= _entityCount)
-                //    throw new InvalidOperationException();
-                //else return _entityCount;
                 return _position;
             }
         }
@@ -40,8 +33,7 @@ namespace MyECS2
         public bool MoveNext()
         {
             if (++_position < _entityCount)
-            {
-                //_position++;
+            {               
                 return true;
             }
             return false;
